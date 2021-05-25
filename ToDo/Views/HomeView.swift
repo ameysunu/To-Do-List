@@ -20,12 +20,10 @@ struct HomeView: View {
                 Spacer()
                 
                 HStack {
-                    Button(action: {
-                        
-                    }){
+                    NavigationLink(destination: ListView()){
                         Image(systemName: "plus")
                         Text("Add a List")
-                    }
+                }
                 }
                 
             }

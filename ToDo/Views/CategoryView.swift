@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-struct Card {
-    let name: String
-    let icon: String
-}
-
 struct CategoryView: View {
     let card: Card
     var body: some View {
