@@ -15,6 +15,7 @@
 		9D1F7A43265CFD92000BF141 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F7A42265CFD92000BF141 /* CategoryView.swift */; };
 		9D20BBA8265D80AE00617E83 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20BBA7265D80AE00617E83 /* Model.swift */; };
 		9D20BBAC265D80F200617E83 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20BBAB265D80F200617E83 /* ListView.swift */; };
+		9D98D289265D90AD00781B2E /* ListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D98D288265D90AD00781B2E /* ListInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9D1F7A42265CFD92000BF141 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		9D20BBA7265D80AE00617E83 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9D20BBAB265D80F200617E83 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		9D98D288265D90AD00781B2E /* ListInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				9D1F7A40265CF944000BF141 /* HomeView.swift */,
 				9D1F7A42265CFD92000BF141 /* CategoryView.swift */,
 				9D20BBAB265D80F200617E83 /* ListView.swift */,
+				9D98D288265D90AD00781B2E /* ListInfo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				9D1F7A41265CF945000BF141 /* HomeView.swift in Sources */,
 				9D20BBAC265D80F200617E83 /* ListView.swift in Sources */,
 				9D1F7A34265CF907000BF141 /* ContentView.swift in Sources */,
+				9D98D289265D90AD00781B2E /* ListInfo.swift in Sources */,
 				9D1F7A43265CFD92000BF141 /* CategoryView.swift in Sources */,
 				9D1F7A32265CF907000BF141 /* ToDoApp.swift in Sources */,
 			);

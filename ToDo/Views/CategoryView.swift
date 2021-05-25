@@ -10,12 +10,12 @@ import SwiftUI
 struct CategoryView: View {
     let card: Card
     var body: some View {
-        Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+        NavigationLink(destination: ListInfo(card: Card(name: card.name, icon: card.icon))){
             ZStack {
                 
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
-                    .fill(Color.gray)
-
+                    .fill(Color("categorycolor"))
+                
                 VStack {
                     Image(systemName: card.icon).foregroundColor(.white)
                     Text(card.name)
@@ -25,9 +25,9 @@ struct CategoryView: View {
                 .padding(20)
                 .multilineTextAlignment(.center)
             }
+            
+            .frame(width: 175, height: 100)
         }
-        
-        .frame(width: 175, height: 100)
     }
 }
 
