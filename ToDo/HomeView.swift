@@ -19,6 +19,15 @@ struct HomeView: View {
                 }
                 Spacer()
                 
+                HStack {
+                    Button(action: {
+                        
+                    }){
+                        Image(systemName: "plus")
+                        Text("Add a List")
+                    }
+                }
+                
             }
             .navigationTitle("To-Do List")
         }

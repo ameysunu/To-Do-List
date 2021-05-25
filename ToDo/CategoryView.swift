@@ -15,19 +15,23 @@ struct Card {
 struct CategoryView: View {
     let card: Card
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(Color.gray)
+        Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+            ZStack {
+                
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(Color.gray)
 
-            VStack {
-                Image(systemName: card.icon).foregroundColor(.white)
-                Text(card.name)
-                    .font(.title2)
-                    .foregroundColor(.white)
+                VStack {
+                    Image(systemName: card.icon).foregroundColor(.white)
+                    Text(card.name)
+                        .font(.title2)
+                        .foregroundColor(.white)
+                }
+                .padding(20)
+                .multilineTextAlignment(.center)
             }
-            .padding(20)
-            .multilineTextAlignment(.center)
         }
+        
         .frame(width: 175, height: 100)
     }
 }
