@@ -42,7 +42,7 @@ struct ListInfo: View {
                     }
                 }
             }
-            
+            .navigationBarHidden(true)
             .listStyle(PlainListStyle())
         }
     }
