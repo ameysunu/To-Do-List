@@ -10,7 +10,7 @@ import SwiftUI
 struct ListInfo: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    
+    @Environment(\.presentationMode) var presentation
     @FetchRequest(entity: ToDo.entity(), sortDescriptors: [],predicate: NSPredicate(format: "category != %@", Category.other.rawValue))
     
     var lists: FetchedResults<ToDo>
@@ -18,18 +18,34 @@ struct ListInfo: View {
     let card: Card
     var body: some View {
         VStack (alignment: .leading){
+            HStack{
+                Spacer()
+                Button(action: {
+                    self.presentation.wrappedValue.dismiss()
+                }){
+                    Image(systemName: "multiply.circle.fill")
+                }
+                .padding()
+            }
             Text(card.name)
                 .font(.title)
                 .padding()
             List {
                 ForEach(lists) { list in
-                    VStack(alignment: .leading) {
-                        Text(list.title)
-                            .font(.headline)
-                        Text(list.body)
-                            .font(.subheadline)
+                    Group {
+                        if (list.category == card.name){
+                            VStack(alignment: .leading) {
+                                Text(list.title)
+                                    .font(.headline)
+                                Text(list.body)
+                                    .font(.subheadline)
+                            }
+                            .frame(height: 50)
+                        }
+                        else {
+                            EmptyView()
+                        }
                     }
-                    .frame(height: 50)
                 }
                 .onDelete { indexSet in
                     for index in indexSet {

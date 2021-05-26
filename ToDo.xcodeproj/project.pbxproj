@@ -54,8 +54,6 @@
 		9D1F7A25265CF906000BF141 = {
 			isa = PBXGroup;
 			children = (
-				9DC9C0EF265E5CF8003B7377 /* ToDo+CoreDataClass.swift */,
-				9DC9C0F0265E5CF8003B7377 /* ToDo+CoreDataProperties.swift */,
 				9D1F7A30265CF907000BF141 /* ToDo */,
 				9D1F7A2F265CF907000BF141 /* Products */,
 			);
@@ -95,6 +93,8 @@
 		9D20BBA9265D80C100617E83 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9DC9C0EF265E5CF8003B7377 /* ToDo+CoreDataClass.swift */,
+				9DC9C0F0265E5CF8003B7377 /* ToDo+CoreDataProperties.swift */,
 				9D20BBA7265D80AE00617E83 /* Model.swift */,
 				9DC9C0BC265E4000003B7377 /* Persistence.swift */,
 			);
