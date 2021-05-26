@@ -18,6 +18,8 @@
 		9D98D289265D90AD00781B2E /* ListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D98D288265D90AD00781B2E /* ListInfo.swift */; };
 		9DC9C0BB265E3F8A003B7377 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9C0B9265E3F8A003B7377 /* ToDo.xcdatamodeld */; };
 		9DC9C0BD265E4000003B7377 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9C0BC265E4000003B7377 /* Persistence.swift */; };
+		9DC9C0C0265E44EA003B7377 /* List+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9C0BE265E44EA003B7377 /* List+CoreDataClass.swift */; };
+		9DC9C0C1265E44EA003B7377 /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9C0BF265E44EA003B7377 /* List+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		9D98D288265D90AD00781B2E /* ListInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfo.swift; sourceTree = "<group>"; };
 		9DC9C0BA265E3F8A003B7377 /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
 		9DC9C0BC265E4000003B7377 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		9DC9C0BE265E44EA003B7377 /* List+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9DC9C0BF265E44EA003B7377 /* List+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 		9D1F7A25265CF906000BF141 = {
 			isa = PBXGroup;
 			children = (
+				9DC9C0BE265E44EA003B7377 /* List+CoreDataClass.swift */,
+				9DC9C0BF265E44EA003B7377 /* List+CoreDataProperties.swift */,
 				9D1F7A30265CF907000BF141 /* ToDo */,
 				9D1F7A2F265CF907000BF141 /* Products */,
 			);
@@ -182,6 +188,8 @@
 				9D1F7A34265CF907000BF141 /* ContentView.swift in Sources */,
 				9D98D289265D90AD00781B2E /* ListInfo.swift in Sources */,
 				9D1F7A43265CFD92000BF141 /* CategoryView.swift in Sources */,
+				9DC9C0C1265E44EA003B7377 /* List+CoreDataProperties.swift in Sources */,
+				9DC9C0C0265E44EA003B7377 /* List+CoreDataClass.swift in Sources */,
 				9D1F7A32265CF907000BF141 /* ToDoApp.swift in Sources */,
 				9DC9C0BB265E3F8A003B7377 /* ToDo.xcdatamodeld in Sources */,
 			);
