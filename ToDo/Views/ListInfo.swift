@@ -8,13 +8,42 @@
 import SwiftUI
 
 struct ListInfo: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(entity: ToDo.entity(), sortDescriptors: [],predicate: NSPredicate(format: "category != %@", Category.other.rawValue))
+    
+    var lists: FetchedResults<ToDo>
+    
     let card: Card
     var body: some View {
         VStack (alignment: .leading){
             Text(card.name)
                 .font(.title)
-            Spacer()
-            Text("Hello World!")
+                .padding()
+            List {
+                ForEach(lists) { list in
+                    VStack(alignment: .leading) {
+                        Text(list.title)
+                            .font(.headline)
+                        Text(list.body)
+                            .font(.subheadline)
+                    }
+                    .frame(height: 50)
+                }
+                .onDelete { indexSet in
+                    for index in indexSet {
+                        viewContext.delete(lists[index])
+                    }
+                    do {
+                        try viewContext.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            
+            .listStyle(PlainListStyle())
         }
     }
 }
