@@ -13,7 +13,7 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = List(context: viewContext)
+            let newItem = ToDo(context: viewContext)
             newItem.body = "Yeet"
             newItem.title = "Dance"
             newItem.category = "Business"

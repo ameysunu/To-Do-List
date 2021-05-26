@@ -83,7 +83,7 @@ struct ListView: View {
                     .padding()
             }, trailing: Button(
                 action: {
-                    let newList = List(context: viewContext)
+                    let newList = ToDo(context: viewContext)
                     newList.title = title
                     newList.body = value
                     newList.category = selection
