@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ListView: View {
     
     @Environment(\.presentationMode) var presentation
     @State var title: String = ""
     @State var value: String = ""
-    @State private var selection = 1
+    @State private var selection = "Business"
     @State var expand = false
+    @State var display = false
     
     
     var body: some View {
@@ -37,23 +39,35 @@ struct ListView: View {
             
             Button(action: {
                 self.expand.toggle()
+                display = false
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+
             }) {
                 Text("Choose Category")
             }
             .padding()
             if expand {
-                Picker(selection: $selection, label: Text("Zeige Deteils")) {
-                    Text("Business").tag(1)
-                    Text("Personal").tag(2)
+                let categories = ["Business", "Personal"]
+                Picker(selection: $selection, label: Text("Categories")) {
+                    ForEach(categories, id: \.self) {
+                        Text($0)
+                    }
                 }
                 
                 Button(action: {
                     self.expand.toggle()
+                    self.display.toggle()
                 }){
-                    Text("Exit")
+                    Text("Done")
                 }
+                .padding()
             }
             
+            if display {
+                Text(selection)
+                    .font(.title2)
+                    .padding()
+            }
             
             Spacer()
         }
