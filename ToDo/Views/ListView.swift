@@ -10,6 +10,7 @@ import CoreData
 
 struct ListView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
     @State var title: String = ""
     @State var value: String = ""
@@ -82,7 +83,17 @@ struct ListView: View {
                     .padding()
             }, trailing: Button(
                 action: {
-                    
+                    let newList = List(context: viewContext)
+                    newList.title = title
+                    newList.body = value
+                    newList.category = selection
+                    do {
+                         try viewContext.save()
+                         print("List Saved")
+                        self.presentation.wrappedValue.dismiss()
+                     } catch {
+                         print(error.localizedDescription)
+                     }
                 }){
                 Text("Done")
                     .padding()
