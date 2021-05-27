@@ -19,6 +19,7 @@ extension ToDo {
     @NSManaged public var title: String
     @NSManaged public var body: String
     @NSManaged public var category: String
+    @NSManaged public var done: Bool
     
     var categoryValue: Category {
          set {

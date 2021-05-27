@@ -11,6 +11,7 @@ struct ListInfo: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
+    @State var done: Bool = false
     @FetchRequest(entity: ToDo.entity(), sortDescriptors: [],predicate: NSPredicate(format: "category != %@", Category.other.rawValue))
     
     var lists: FetchedResults<ToDo>
@@ -19,6 +20,7 @@ struct ListInfo: View {
     var body: some View {
         VStack (alignment: .leading){
             HStack{
+                
                 Spacer()
                 Button(action: {
                     self.presentation.wrappedValue.dismiss()
@@ -34,13 +36,29 @@ struct ListInfo: View {
                 ForEach(lists) { list in
                     Group {
                         if (list.category == card.name){
-                            VStack(alignment: .leading) {
-                                Text(list.title)
-                                    .font(.headline)
-                                Text(list.body)
-                                    .font(.subheadline)
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(list.title)
+                                        .font(.headline)
+                                    Text(list.body)
+                                        .font(.subheadline)
+                                }
+                                .frame(height: 50)
+                                Spacer()
+                                if (list.done == false) {
+                                    Button(action: {
+                                        list.done = true
+                                    }) {
+                                        Image(systemName: "circle")
+                                    }
+                                } else {
+                                    Button(action: {
+                                        list.done = false
+                                    }){
+                                        Image(systemName: "checkmark.circle")
+                                    }
+                                }
                             }
-                            .frame(height: 50)
                         }
                         else {
                             EmptyView()

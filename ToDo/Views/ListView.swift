@@ -87,6 +87,7 @@ struct ListView: View {
                     newList.title = title
                     newList.body = value
                     newList.category = selection
+                    newList.done = false
                     do {
                          try viewContext.save()
                          print("List Saved")

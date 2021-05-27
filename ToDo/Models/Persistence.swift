@@ -17,6 +17,7 @@ struct PersistenceController {
             newItem.body = "Yeet"
             newItem.title = "Dance"
             newItem.category = "Other"
+            newItem.done = true
         }
         do {
             try viewContext.save()
