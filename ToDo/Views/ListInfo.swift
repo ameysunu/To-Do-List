@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ListInfo: View {
     
@@ -15,7 +16,7 @@ struct ListInfo: View {
     @FetchRequest(entity: ToDo.entity(), sortDescriptors: [],predicate: NSPredicate(format: "category != %@", Category.other.rawValue))
     
     var lists: FetchedResults<ToDo>
-    
+    let db = Firestore.firestore()
     let card: Card
     var body: some View {
         VStack (alignment: .leading){
@@ -24,6 +25,15 @@ struct ListInfo: View {
                 Spacer()
                 Button(action: {
                     self.presentation.wrappedValue.dismiss()
+                    
+                    //Testing only
+                    for list in lists{
+                    db.collection("coredata").addDocument(data: [
+                        "title" : list.title,
+                        "body" : list.body,
+                        "category" : list.category
+                    ])
+                    }
                 }){
                     Image(systemName: "multiply.circle.fill")
                 }

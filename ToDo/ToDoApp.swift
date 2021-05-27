@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct ToDoApp: App {
+    
+    init(){
+        FirebaseApp.configure()
+    }
+    
     let persistenceController = PersistenceController.shared
     @Environment(\.scenePhase) var scenePhase
     
