@@ -14,7 +14,7 @@ struct ListView: View {
     @Environment(\.presentationMode) var presentation
     @State var title: String = ""
     @State var value: String = ""
-    @State private var selection = "Business"
+    @State private var selection = "Generic"
     @State var expand = false
     @State var display = false
     

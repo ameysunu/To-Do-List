@@ -13,7 +13,6 @@ struct CategoryView: View {
     
     let card: Card
     var body: some View {
-        //        NavigationLink(destination: ListInfo(card: Card(name: card.name, icon: card.icon))){
         Button(action: {
             showingSheet.toggle()
         }){
