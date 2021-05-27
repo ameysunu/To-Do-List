@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct CategoryView: View {
+    
+    @State private var showingSheet = false
+    
     let card: Card
     var body: some View {
-        NavigationLink(destination: ListInfo(card: Card(name: card.name, icon: card.icon))){
+        //        NavigationLink(destination: ListInfo(card: Card(name: card.name, icon: card.icon))){
+        Button(action: {
+            showingSheet.toggle()
+        }){
             ZStack {
                 
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -27,6 +33,9 @@ struct CategoryView: View {
             }
             
             .frame(width: 175, height: 100)
+        }
+        .sheet(isPresented: $showingSheet) {
+            ListInfo(card: Card(name: card.name, icon: card.icon)).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 }
