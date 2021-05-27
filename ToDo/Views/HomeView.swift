@@ -17,6 +17,8 @@ struct HomeView: View {
                     CategoryView(card: Card(name: "Business", icon: "wrench.fill"))
                     CategoryView(card: Card(name: "Personal", icon: "studentdesk"))
                 }
+                CategoryView(card: Card(name: "Generic", icon: "staroflife"))
+
                 Spacer()
                 
                 HStack {
