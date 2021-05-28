@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ListInfo: View {
     
@@ -15,12 +16,14 @@ struct ListInfo: View {
     @FetchRequest(entity: ToDo.entity(), sortDescriptors: [],predicate: NSPredicate(format: "category != %@", Category.other.rawValue))
     
     var lists: FetchedResults<ToDo>
-    
+    let db = Firestore.firestore()
     let card: Card
+    let userID = Auth.auth().currentUser?.uid
+    @State var upload: Bool = false
+    
     var body: some View {
         VStack (alignment: .leading){
             HStack{
-                
                 Spacer()
                 Button(action: {
                     self.presentation.wrappedValue.dismiss()
@@ -78,7 +81,25 @@ struct ListInfo: View {
             }
             .navigationBarHidden(true)
             .listStyle(PlainListStyle())
+            
+            Button(action: {
+                for list in lists{
+                    db.collection(userID!).addDocument(data: [
+                        "title" : list.title,
+                        "body" : list.body,
+                        "category" : list.category
+                    ])
+                }
+                self.upload.toggle()
+            }){
+                HStack {
+                    Image(systemName: upload ? "checkmark" : "icloud.and.arrow.up" )
+                    Text(upload ? "Done uploading!" : "Upload to Firebase" )
+                }
+            }
+            .padding()
         }
+        
     }
 }
 

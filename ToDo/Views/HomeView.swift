@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        NavigationView {
             VStack(alignment: .leading){
                 Text("CATEGORY")
                     .font(.subheadline)
@@ -30,8 +29,7 @@ struct HomeView: View {
                 
             }
             .navigationTitle("To-Do List")
-        }
-        
+            .navigationBarBackButtonHidden(true)
     }
 }
 
