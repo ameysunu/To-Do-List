@@ -20,7 +20,7 @@ struct ToDoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            LoginView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
         .onChange(of: scenePhase) { _ in
             persistenceController.save()
