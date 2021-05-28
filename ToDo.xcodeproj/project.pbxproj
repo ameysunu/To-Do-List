@@ -17,6 +17,7 @@
 		9D20BBA8265D80AE00617E83 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20BBA7265D80AE00617E83 /* Model.swift */; };
 		9D20BBAC265D80F200617E83 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D20BBAB265D80F200617E83 /* ListView.swift */; };
 		9D725EA82660DEA500864133 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D725EA72660DEA500864133 /* LoginView.swift */; };
+		9D725EAA2660FDBB00864133 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D725EA92660FDBB00864133 /* RegisterView.swift */; };
 		9D98D289265D90AD00781B2E /* ListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D98D288265D90AD00781B2E /* ListInfo.swift */; };
 		9DC9C0BD265E4000003B7377 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9C0BC265E4000003B7377 /* Persistence.swift */; };
 		9DC9C0EE265E5CBE003B7377 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9C0EC265E5CBE003B7377 /* ToDo.xcdatamodeld */; };
@@ -39,6 +40,7 @@
 		9D20BBA7265D80AE00617E83 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9D20BBAB265D80F200617E83 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		9D725EA72660DEA500864133 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9D725EA92660FDBB00864133 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		9D98D288265D90AD00781B2E /* ListInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfo.swift; sourceTree = "<group>"; };
 		9DC9C0BC265E4000003B7377 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		9DC9C0ED265E5CBE003B7377 /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				9D20BBAB265D80F200617E83 /* ListView.swift */,
 				9D98D288265D90AD00781B2E /* ListInfo.swift */,
 				9D725EA72660DEA500864133 /* LoginView.swift */,
+				9D725EA92660FDBB00864133 /* RegisterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				9DC9C0BD265E4000003B7377 /* Persistence.swift in Sources */,
 				9D20BBA8265D80AE00617E83 /* Model.swift in Sources */,
+				9D725EAA2660FDBB00864133 /* RegisterView.swift in Sources */,
 				9D1F7A41265CF945000BF141 /* HomeView.swift in Sources */,
 				9DC9C0F1265E5CF8003B7377 /* ToDo+CoreDataClass.swift in Sources */,
 				9D20BBAC265D80F200617E83 /* ListView.swift in Sources */,

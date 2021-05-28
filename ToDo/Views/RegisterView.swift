@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 
-struct LoginView: View {
+struct RegisterView: View {
     
     @State var username: String = ""
     @State var password: String = ""
@@ -17,9 +17,8 @@ struct LoginView: View {
     @State var navigated = false
     
     var body: some View {
-        NavigationView{
         VStack(alignment: .leading) {
-            Text("Login")
+            Text("Create a new account")
                 .font(.title)
                 .padding()
             TextField("Email", text: $username)
@@ -38,14 +37,9 @@ struct LoginView: View {
                 .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
                 .padding([.horizontal, .top], 10)
             
-            NavigationLink(destination: RegisterView()){
-                Text("Don't have an account? Create one.")
-                    .padding()
-            }
-            
             NavigationLink(destination: ContentView(), isActive: $navigated){
             Button (action: {
-                Auth.auth().signIn(withEmail: username, password: password) { authResult, error in
+                Auth.auth().createUser(withEmail: username, password: password) { authResult, error in
                     if let e = error {
                         loginError = e.localizedDescription
                         print(e.localizedDescription)
@@ -59,7 +53,7 @@ struct LoginView: View {
                 }
                 
             }){
-                Text("Login")
+                Text("Register")
                     .foregroundColor(.white)
                     .padding()
             }.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue))
@@ -75,11 +69,10 @@ struct LoginView: View {
         }
         }.navigationBarHidden(true)
     }
-    }
 
-struct LoginView_Previews: PreviewProvider {
+struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        RegisterView()
     }
 }
 }
