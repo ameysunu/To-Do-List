@@ -18,22 +18,15 @@ struct ListInfo: View {
     var lists: FetchedResults<ToDo>
     let db = Firestore.firestore()
     let card: Card
+    let userID = Auth.auth().currentUser?.uid
+    @State var upload: Bool = false
+    
     var body: some View {
         VStack (alignment: .leading){
             HStack{
-                
                 Spacer()
                 Button(action: {
                     self.presentation.wrappedValue.dismiss()
-                    
-                    //Testing only
-                    for list in lists{
-                    db.collection("coredata").addDocument(data: [
-                        "title" : list.title,
-                        "body" : list.body,
-                        "category" : list.category
-                    ])
-                    }
                 }){
                     Image(systemName: "multiply.circle.fill")
                 }
@@ -88,7 +81,25 @@ struct ListInfo: View {
             }
             .navigationBarHidden(true)
             .listStyle(PlainListStyle())
+            
+            Button(action: {
+                for list in lists{
+                    db.collection(userID!).addDocument(data: [
+                        "title" : list.title,
+                        "body" : list.body,
+                        "category" : list.category
+                    ])
+                }
+                self.upload.toggle()
+            }){
+                HStack {
+                    Image(systemName: upload ? "checkmark" : "icloud.and.arrow.up" )
+                    Text(upload ? "Done uploading!" : "Upload to Firebase" )
+                }
+            }
+            .padding()
         }
+        
     }
 }
 

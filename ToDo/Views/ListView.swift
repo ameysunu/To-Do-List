@@ -42,13 +42,13 @@ struct ListView: View {
                 self.expand.toggle()
                 display = false
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
-
+                
             }) {
                 Text("Choose Category")
             }
             .padding()
             if expand {
-                let categories = ["Business", "Personal"]
+                let categories = ["Generic", "Business", "Personal"]
                 Picker(selection: $selection, label: Text("Categories")) {
                     ForEach(categories, id: \.self) {
                         Text($0)
@@ -89,12 +89,12 @@ struct ListView: View {
                     newList.category = selection
                     newList.done = false
                     do {
-                         try viewContext.save()
-                         print("List Saved")
+                        try viewContext.save()
+                        print("List Saved")
                         self.presentation.wrappedValue.dismiss()
-                     } catch {
-                         print(error.localizedDescription)
-                     }
+                    } catch {
+                        print(error.localizedDescription)
+                    }
                 }){
                 Text("Done")
                     .padding()
