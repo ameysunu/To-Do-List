@@ -39,6 +39,36 @@ struct CategoryView: View {
     }
 }
 
+struct DatabaseView: View {
+    @State private var showingSheet = false
+    
+    let card: Card
+    var body: some View{
+        Button(action: {
+            showingSheet.toggle()
+        }){
+            ZStack {
+                
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(Color("categorycolor"))
+                
+                VStack {
+                    Image(systemName: card.icon).foregroundColor(.white)
+                    Text(card.name)
+                        .font(.title2)
+                        .foregroundColor(.white)
+                }
+                .padding(20)
+                .multilineTextAlignment(.center)
+            }
+            
+            .frame(width: 175, height: 100)
+        }
+        .sheet(isPresented: $showingSheet) {
+            FirebaseView(card: Card(name: "Works", icon: "plus"),title: "Test", value: "Test", Category: "Generic").environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
+    }
+}
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryView(card: Card.init(name: "Works", icon: "wrench.fill")).previewLayout(.fixed(width: 200, height: 100))
