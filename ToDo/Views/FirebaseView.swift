@@ -8,22 +8,38 @@
 import SwiftUI
 import Firebase
 
+class FirebaseData: ObservableObject {
+    @State var id: String
+    @State var title: String
+    @State var value: String
+    @State var category: String
+    
+    init(id: String, title: String, value: String, category: String) {
+        self.id = id
+        self.title = title
+        self.value = value
+        self.category = category
+    }
+}
+
 struct FirebaseView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
     @State var update = false
+    
     let db = Firestore.firestore()
     let card: Card
     let userID = Auth.auth().currentUser?.uid
-    var title: String
-    var value: String
-    var Category: String
+    
+    @State var reload = false
+    @State var data: [FirebaseData] = []
     
     var body: some View {
+        
         VStack (alignment: .leading){
             HStack{
                 Spacer()
-                Button(action: {
+                Button(action:{
                     self.presentation.wrappedValue.dismiss()
                 }){
                     Image(systemName: "multiply.circle.fill")
@@ -33,47 +49,46 @@ struct FirebaseView: View {
             Text(card.name)
                 .font(.title)
                 .padding()
-            
-            List{
-                Group {
-                    VStack(alignment: .leading) {
-                        Text(title)
-                            .font(.headline)
-                        Text(value)
-                            .font(.subheadline)
-                        Text(Category)
-                            .font(.subheadline)
-                        
-                    }
-                    .frame(height: 50)
-                    
+            List {
+                ForEach((self.data), id: \.self.id){ item in
+                    Text("\(item.title)")
                     
                 }
             }
-            Button(action : {
-                db.collection(userID!).getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            print("\(document.documentID) => \(document.data())")
-                            
-                        }
-                    }
-                }
+            Button(action:{
                 self.update.toggle()
+                self.reload.toggle()
+                getDatabase()
             }){
-                HStack {
-                    Text("Get database")
-                }
+                Text("Get database")
+                    .padding()
             }
-            .padding()
         }
     }
+    func getDatabase(){
+        self.data.removeAll()
+        self.db.collectionGroup(userID!).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    let id = document.documentID
+                    let title = document.data()["title"] as! String
+                    let value = document.data()["body"] as! String
+                    let category = document.data()["category"] as! String
+                    
+                    self.data.append(FirebaseData(id: id, title: title, value: value, category: category))
+                }
+            }
+        }
+    }
+    
 }
+
 
 struct FirebaseView_Previews: PreviewProvider {
     static var previews: some View {
-        FirebaseView(card: Card(name: "Works", icon: "plus"),title: "Test", value: "Test", Category: "Generic")
+        FirebaseView(card: Card(name: "Database", icon: "plus"))
     }
 }

@@ -65,7 +65,7 @@ struct DatabaseView: View {
             .frame(width: 175, height: 100)
         }
         .sheet(isPresented: $showingSheet) {
-            FirebaseView(card: Card(name: "Works", icon: "plus"),title: "Test", value: "Test", Category: "Generic").environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            FirebaseView(card: Card(name: "Works", icon: "plus")).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 }
