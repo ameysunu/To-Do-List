@@ -18,7 +18,7 @@ struct HomeView: View {
                 }
                 HStack {
                     CategoryView(card: Card(name: "Generic", icon: "staroflife"))
-                    DatabaseView(card: Card(name: "Database", icon: "staroflife"))
+                    DatabaseView(card: Card(name: "Database", icon: "circle.grid.cross.down.fill"))
                 }
 
                 Spacer()

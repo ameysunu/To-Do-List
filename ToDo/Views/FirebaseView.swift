@@ -32,42 +32,63 @@ struct FirebaseView: View {
     let userID = Auth.auth().currentUser?.uid
     
     @State var data: [FirebaseData] = []
+    @State private var hasTimeElapsed = false
     
     var body: some View {
         
-        VStack (alignment: .leading){
-            HStack{
-                Spacer()
-                Button(action:{
-                    self.presentation.wrappedValue.dismiss()
-                }){
-                    Image(systemName: "multiply.circle.fill")
-                }
-                .padding()
-            }
-            Text(card.name)
-                .font(.title)
-                .padding()
-            List {
-                ForEach((self.data), id: \.self.id){ item in
-                    VStack(alignment: .leading){
-                        Text("\(item.title)")
-                            .font(.headline)
-                        Text("\(item.value)")
-                            .font(.subheadline)
-                        Text("\(item.category)")
-                            .font(.subheadline)
+        VStack{
+            VStack (alignment: .leading){
+                HStack{
+                    Spacer()
+                    Button(action:{
+                        self.presentation.wrappedValue.dismiss()
+                    }){
+                        Image(systemName: "multiply.circle.fill")
                     }
-                    .frame(height: 50)
+                    .padding()
                 }
-            }
-            Button(action:{
-                self.update.toggle()
-                getDatabase()
-            }){
-                Text("Get database")
+                Text(card.name)
+                    .font(.title)
                     .padding()
             }
+            if(self.data.isEmpty){
+                VStack(alignment: .center){
+                    Spacer()
+                    if(hasTimeElapsed == false){
+                        ProgressView()
+                    } else {
+                        Text("No data found. Upload your data and check again.")
+                            .padding()
+                    }
+                    Spacer()
+                }
+            } else {
+                List {
+                    ForEach((self.data), id: \.self.id){ item in
+                        VStack(alignment: .leading){
+                            Text("\(item.title)")
+                                .font(.headline)
+                            Text("\(item.value)")
+                                .font(.subheadline)
+                            Text("\(item.category)")
+                                .font(.subheadline)
+                        }
+                        .frame(height: 50)
+                        
+                    }
+                }
+            }
+        }
+        .onAppear{
+            self.update.toggle()
+            getDatabase()
+            loadDatabase()
+        }
+        
+    }
+    private func loadDatabase() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            hasTimeElapsed = true
         }
     }
     func getDatabase(){
