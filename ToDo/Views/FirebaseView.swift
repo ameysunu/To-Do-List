@@ -65,15 +65,24 @@ struct FirebaseView: View {
             } else {
                 List {
                     ForEach((self.data), id: \.self.id){ item in
-                        VStack(alignment: .leading){
-                            Text("\(item.title)")
-                                .font(.headline)
-                            Text("\(item.value)")
-                                .font(.subheadline)
-                            Text("\(item.category)")
-                                .font(.subheadline)
+                        HStack {
+                            VStack(alignment: .leading){
+                                Text("\(item.title)")
+                                    .font(.headline)
+                                Text("\(item.value)")
+                                    .font(.subheadline)
+                                Text("\(item.category)")
+                                    .font(.subheadline)
+                            }
+                            .frame(height: 50)
+                            Spacer()
+                            Button(action: {
+                                db.collection(userID!).document(item.id).delete()
+                                self.presentation.wrappedValue.dismiss()
+                            }){
+                                Image(systemName: "trash.fill")
+                            }
                         }
-                        .frame(height: 50)
                         
                     }
                 }
