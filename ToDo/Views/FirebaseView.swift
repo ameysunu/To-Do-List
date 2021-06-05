@@ -31,7 +31,6 @@ struct FirebaseView: View {
     let card: Card
     let userID = Auth.auth().currentUser?.uid
     
-    @State var reload = false
     @State var data: [FirebaseData] = []
     
     var body: some View {
@@ -51,13 +50,19 @@ struct FirebaseView: View {
                 .padding()
             List {
                 ForEach((self.data), id: \.self.id){ item in
-                    Text("\(item.title)")
-                    
+                    VStack(alignment: .leading){
+                        Text("\(item.title)")
+                            .font(.headline)
+                        Text("\(item.value)")
+                            .font(.subheadline)
+                        Text("\(item.category)")
+                            .font(.subheadline)
+                    }
+                    .frame(height: 50)
                 }
             }
             Button(action:{
                 self.update.toggle()
-                self.reload.toggle()
                 getDatabase()
             }){
                 Text("Get database")
