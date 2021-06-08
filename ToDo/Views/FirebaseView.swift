@@ -98,7 +98,7 @@ struct FirebaseView: View {
     }
     func delete(at offsets: IndexSet){
         data.remove(atOffsets: offsets)
-        print(offsets)
+       
     }
     private func loadDatabase() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
