@@ -5,7 +5,7 @@ workflows:
       xcode: latest
       cocoapods: default
       vars:
-          XCODE_PROJECT: "ToDo.xcworkspace" 
+          XCODE_PROJECT: "ToDo.xcodeproj" 
           XCODE_SCHEME: "ToDo" 
     scripts:
       - name: Run tests
