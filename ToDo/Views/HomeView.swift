@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        NavigationView {
             VStack(alignment: .leading){
                 Text("CATEGORY")
                     .font(.subheadline)
@@ -17,7 +16,10 @@ struct HomeView: View {
                     CategoryView(card: Card(name: "Business", icon: "wrench.fill"))
                     CategoryView(card: Card(name: "Personal", icon: "studentdesk"))
                 }
-                CategoryView(card: Card(name: "Generic", icon: "staroflife"))
+                HStack {
+                    CategoryView(card: Card(name: "Generic", icon: "staroflife"))
+                    DatabaseView(card: Card(name: "Database", icon: "circle.grid.cross.down.fill"))
+                }
 
                 Spacer()
                 
@@ -30,8 +32,7 @@ struct HomeView: View {
                 
             }
             .navigationTitle("To-Do List")
-        }
-        
+            .navigationBarBackButtonHidden(true)
     }
 }
 
