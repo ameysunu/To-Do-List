@@ -85,7 +85,6 @@ struct FirebaseView: View {
                         }
                         
                     }
-                    .onDelete(perform: delete)
                 }
             }
         }
