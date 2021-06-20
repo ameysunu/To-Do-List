@@ -32,8 +32,11 @@
 		9DCEF2C5267F028D00DB4C32 /* ToDo WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DCEF2B8267F028B00DB4C32 /* ToDo WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9DCEF2CF267F0A4400DB4C32 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEF2CE267F0A4400DB4C32 /* WidgetView.swift */; };
 		9DCEF2D0267F0A4400DB4C32 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEF2CE267F0A4400DB4C32 /* WidgetView.swift */; };
-		9DCEF2D5267F139600DB4C32 /* SharedObjects in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCEF2D4267F139600DB4C32 /* SharedObjects */; };
-		9DCEF2D7267F13A500DB4C32 /* SharedObjects in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCEF2D6267F13A500DB4C32 /* SharedObjects */; };
+		9DCEF2D5267F139600DB4C32 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCEF2D4267F139600DB4C32 /* SwiftPackageProductDependency */; };
+		9DCEF2D7267F13A500DB4C32 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCEF2D6267F13A500DB4C32 /* SwiftPackageProductDependency */; };
+		9DCEF304267F17C600DB4C32 /* Pods_ToDo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCEF2E6267F17C600DB4C32 /* Pods_ToDo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CDC1E9E22345969F7A5AAED6 /* Pods_ToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCEF2E6267F17C600DB4C32 /* Pods_ToDo.framework */; };
+		F3FBFAF45F72D8DEB5F9976C /* Pods_ToDo_WidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5B2C668AB67CEDC1B4A684 /* Pods_ToDo_WidgetExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +61,24 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9DCEF305267F17C600DB4C32 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DCEF304267F17C600DB4C32 /* Pods_ToDo.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2C6F905B406AF18832B26F91 /* Pods_ToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5B2C668AB67CEDC1B4A684 /* Pods_ToDo_WidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDo_WidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E0A156AE311093C59FAACD /* Pods-ToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo.release.xcconfig"; path = "Target Support Files/Pods-ToDo/Pods-ToDo.release.xcconfig"; sourceTree = "<group>"; };
+		96F25A0428E32AE353736356 /* Pods-ToDo WidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo WidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-ToDo WidgetExtension/Pods-ToDo WidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		9D1F7A2E265CF907000BF141 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1F7A31265CF907000BF141 /* ToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApp.swift; sourceTree = "<group>"; };
 		9D1F7A33265CF907000BF141 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +108,22 @@
 		9DCEF2D1267F11D900DB4C32 /* ToDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDo.entitlements; sourceTree = "<group>"; };
 		9DCEF2D2267F123500DB4C32 /* ToDo WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ToDo WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		9DCEF2D3267F12EE00DB4C32 /* SharedObjects */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SharedObjects; path = ../SharedObjects; sourceTree = "<group>"; };
+		9DCEF2D8267F17C600DB4C32 /* absl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = absl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2D9267F17C600DB4C32 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2DA267F17C600DB4C32 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2DB267F17C600DB4C32 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2DC267F17C600DB4C32 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2DD267F17C600DB4C32 /* FirebaseFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2DE267F17C600DB4C32 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2DF267F17C600DB4C32 /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2E0267F17C600DB4C32 /* grpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = grpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2E1267F17C600DB4C32 /* grpcpp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = grpcpp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2E2267F17C600DB4C32 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2E3267F17C600DB4C32 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2E4267F17C600DB4C32 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2E5267F17C600DB4C32 /* openssl_grpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = openssl_grpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCEF2E6267F17C600DB4C32 /* Pods_ToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC054C43310CBFB11FA7D49C /* Pods-ToDo WidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo WidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-ToDo WidgetExtension/Pods-ToDo WidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		F9C2D175E4EE16F16C20AE48 /* Pods-ToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo.debug.xcconfig"; path = "Target Support Files/Pods-ToDo/Pods-ToDo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,8 +132,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DCEF2D7267F13A500DB4C32 /* SharedObjects in Frameworks */,
+				9DCEF2D7267F13A500DB4C32 /* BuildFile in Frameworks */,
 				6CEC8BE3965080BF2260808C /* Pods_ToDo.framework in Frameworks */,
+				CDC1E9E22345969F7A5AAED6 /* Pods_ToDo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,8 +143,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DCEF2BC267F028B00DB4C32 /* SwiftUI.framework in Frameworks */,
-				9DCEF2D5267F139600DB4C32 /* SharedObjects in Frameworks */,
+				9DCEF2D5267F139600DB4C32 /* BuildFile in Frameworks */,
 				9DCEF2BA267F028B00DB4C32 /* WidgetKit.framework in Frameworks */,
+				F3FBFAF45F72D8DEB5F9976C /* Pods_ToDo_WidgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +157,8 @@
 			children = (
 				F9C2D175E4EE16F16C20AE48 /* Pods-ToDo.debug.xcconfig */,
 				69E0A156AE311093C59FAACD /* Pods-ToDo.release.xcconfig */,
+				CC054C43310CBFB11FA7D49C /* Pods-ToDo WidgetExtension.debug.xcconfig */,
+				96F25A0428E32AE353736356 /* Pods-ToDo WidgetExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -213,9 +249,24 @@
 		ECC0BDFFF5C38BE31E362D83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9DCEF2D8267F17C600DB4C32 /* absl.framework */,
+				9DCEF2D9267F17C600DB4C32 /* FBLPromises.framework */,
+				9DCEF2DA267F17C600DB4C32 /* FirebaseAuth.framework */,
+				9DCEF2DB267F17C600DB4C32 /* FirebaseCore.framework */,
+				9DCEF2DC267F17C600DB4C32 /* FirebaseCoreDiagnostics.framework */,
+				9DCEF2DD267F17C600DB4C32 /* FirebaseFirestore.framework */,
+				9DCEF2DE267F17C600DB4C32 /* GoogleDataTransport.framework */,
+				9DCEF2DF267F17C600DB4C32 /* GoogleUtilities.framework */,
+				9DCEF2E0267F17C600DB4C32 /* grpc.framework */,
+				9DCEF2E1267F17C600DB4C32 /* grpcpp.framework */,
+				9DCEF2E2267F17C600DB4C32 /* GTMSessionFetcher.framework */,
+				9DCEF2E3267F17C600DB4C32 /* leveldb.framework */,
+				9DCEF2E4267F17C600DB4C32 /* nanopb.framework */,
+				9DCEF2E5267F17C600DB4C32 /* openssl_grpc.framework */,
 				2C6F905B406AF18832B26F91 /* Pods_ToDo.framework */,
 				9DCEF2B9267F028B00DB4C32 /* WidgetKit.framework */,
 				9DCEF2BB267F028B00DB4C32 /* SwiftUI.framework */,
+				5F5B2C668AB67CEDC1B4A684 /* Pods_ToDo_WidgetExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -241,7 +292,7 @@
 			);
 			name = ToDo;
 			packageProductDependencies = (
-				9DCEF2D6267F13A500DB4C32 /* SharedObjects */,
+				9DCEF2D6267F13A500DB4C32 /* SwiftPackageProductDependency */,
 			);
 			productName = ToDo;
 			productReference = 9D1F7A2E265CF907000BF141 /* ToDo.app */;
@@ -251,9 +302,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DCEF2C9267F028D00DB4C32 /* Build configuration list for PBXNativeTarget "ToDo WidgetExtension" */;
 			buildPhases = (
+				188EC009F8FF14A365727555 /* [CP] Check Pods Manifest.lock */,
 				9DCEF2B4267F028B00DB4C32 /* Sources */,
 				9DCEF2B5267F028B00DB4C32 /* Frameworks */,
 				9DCEF2B6267F028B00DB4C32 /* Resources */,
+				9DCEF305267F17C600DB4C32 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,7 +314,7 @@
 			);
 			name = "ToDo WidgetExtension";
 			packageProductDependencies = (
-				9DCEF2D4267F139600DB4C32 /* SharedObjects */,
+				9DCEF2D4267F139600DB4C32 /* SwiftPackageProductDependency */,
 			);
 			productName = "ToDo WidgetExtension";
 			productReference = 9DCEF2B8267F028B00DB4C32 /* ToDo WidgetExtension.appex */;
@@ -325,6 +378,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		188EC009F8FF14A365727555 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ToDo WidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		46F961A25919561238DA3AB3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -577,6 +652,7 @@
 		};
 		9DCEF2C7267F028D00DB4C32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC054C43310CBFB11FA7D49C /* Pods-ToDo WidgetExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -599,6 +675,7 @@
 		};
 		9DCEF2C8267F028D00DB4C32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96F25A0428E32AE353736356 /* Pods-ToDo WidgetExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -652,11 +729,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9DCEF2D4267F139600DB4C32 /* SharedObjects */ = {
+		9DCEF2D4267F139600DB4C32 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedObjects;
 		};
-		9DCEF2D6267F13A500DB4C32 /* SharedObjects */ = {
+		9DCEF2D6267F13A500DB4C32 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedObjects;
 		};

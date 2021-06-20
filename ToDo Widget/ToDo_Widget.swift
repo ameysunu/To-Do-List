@@ -7,6 +7,7 @@
 
 import WidgetKit
 import SwiftUI
+import Firebase
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -48,7 +49,12 @@ struct ToDo_WidgetEntryView : View {
 
 @main
 struct ToDo_Widget: Widget {
+    init() {
+      FirebaseApp.configure()
+    }
+    
     let kind: String = "ToDo_Widget"
+    
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

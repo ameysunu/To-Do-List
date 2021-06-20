@@ -9,4 +9,8 @@ target 'ToDo' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
 
+    target 'ToDo WidgetExtension' do
+        inherit! :search_paths
+    end
+
 end
