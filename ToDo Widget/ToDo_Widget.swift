@@ -52,7 +52,7 @@ struct ToDo_Widget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            ToDo_WidgetEntryView(entry: entry)
+            WidgetView(data: .previewData)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
