@@ -54,8 +54,9 @@ struct ToDo_Widget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WidgetView(data: .previewData)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .supportedFamilies([.systemSmall])
+        .configurationDisplayName("ToDo")
+        .description("View your upcoming tasks with a widget.")
     }
 }
 

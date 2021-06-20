@@ -87,6 +87,8 @@
 		9DCEF2C0267F028D00DB4C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DCEF2C2267F028D00DB4C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DCEF2CE267F0A4400DB4C32 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		9DCEF2D1267F11D900DB4C32 /* ToDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDo.entitlements; sourceTree = "<group>"; };
+		9DCEF2D2267F123500DB4C32 /* ToDo WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ToDo WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		F9C2D175E4EE16F16C20AE48 /* Pods-ToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo.debug.xcconfig"; path = "Target Support Files/Pods-ToDo/Pods-ToDo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 		9D1F7A25265CF906000BF141 = {
 			isa = PBXGroup;
 			children = (
+				9DCEF2D2267F123500DB4C32 /* ToDo WidgetExtension.entitlements */,
 				9D1F7A30265CF907000BF141 /* ToDo */,
 				9DCEF2BD267F028B00DB4C32 /* ToDo Widget */,
 				9D1F7A2F265CF907000BF141 /* Products */,
@@ -143,6 +146,7 @@
 		9D1F7A30265CF907000BF141 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				9DCEF2D1267F11D900DB4C32 /* ToDo.entitlements */,
 				9D1F7A31265CF907000BF141 /* ToDoApp.swift */,
 				9D1F7A33265CF907000BF141 /* ContentView.swift */,
 				9D20BBAA265D80D100617E83 /* Views */,
@@ -516,6 +520,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ToDo/ToDo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDo/Preview Content\"";
 				DEVELOPMENT_TEAM = 548AU6WH8M;
@@ -540,6 +545,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ToDo/ToDo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDo/Preview Content\"";
 				DEVELOPMENT_TEAM = 548AU6WH8M;
@@ -562,6 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "ToDo WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 548AU6WH8M;
 				INFOPLIST_FILE = "ToDo Widget/Info.plist";
@@ -583,6 +590,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "ToDo WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 548AU6WH8M;
 				INFOPLIST_FILE = "ToDo Widget/Info.plist";

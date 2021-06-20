@@ -22,12 +22,11 @@ struct WidgetView: View {
     let data: WidgetData
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(data.task)
-            Text(data.body)
-            Text(data.category)
-        }
-        .navigationTitle("Upcoming To-Do")
+            VStack(alignment: .leading) {
+                Text(data.task)
+                Text(data.body)
+                Text(data.category)
+            }
     }
 }
 
