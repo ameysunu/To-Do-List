@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,8 @@
 		9DCEF2C5267F028D00DB4C32 /* ToDo WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DCEF2B8267F028B00DB4C32 /* ToDo WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9DCEF2CF267F0A4400DB4C32 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEF2CE267F0A4400DB4C32 /* WidgetView.swift */; };
 		9DCEF2D0267F0A4400DB4C32 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEF2CE267F0A4400DB4C32 /* WidgetView.swift */; };
+		9DCEF2D5267F139600DB4C32 /* SharedObjects in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCEF2D4267F139600DB4C32 /* SharedObjects */; };
+		9DCEF2D7267F13A500DB4C32 /* SharedObjects in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCEF2D6267F13A500DB4C32 /* SharedObjects */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,7 @@
 		9DCEF2CE267F0A4400DB4C32 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		9DCEF2D1267F11D900DB4C32 /* ToDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDo.entitlements; sourceTree = "<group>"; };
 		9DCEF2D2267F123500DB4C32 /* ToDo WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ToDo WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		9DCEF2D3267F12EE00DB4C32 /* SharedObjects */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SharedObjects; path = ../SharedObjects; sourceTree = "<group>"; };
 		F9C2D175E4EE16F16C20AE48 /* Pods-ToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo.debug.xcconfig"; path = "Target Support Files/Pods-ToDo/Pods-ToDo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DCEF2D7267F13A500DB4C32 /* SharedObjects in Frameworks */,
 				6CEC8BE3965080BF2260808C /* Pods_ToDo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DCEF2BC267F028B00DB4C32 /* SwiftUI.framework in Frameworks */,
+				9DCEF2D5267F139600DB4C32 /* SharedObjects in Frameworks */,
 				9DCEF2BA267F028B00DB4C32 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +130,7 @@
 		9D1F7A25265CF906000BF141 = {
 			isa = PBXGroup;
 			children = (
+				9DCEF2D3267F12EE00DB4C32 /* SharedObjects */,
 				9DCEF2D2267F123500DB4C32 /* ToDo WidgetExtension.entitlements */,
 				9D1F7A30265CF907000BF141 /* ToDo */,
 				9DCEF2BD267F028B00DB4C32 /* ToDo Widget */,
@@ -234,6 +240,9 @@
 				9DCEF2C4267F028D00DB4C32 /* PBXTargetDependency */,
 			);
 			name = ToDo;
+			packageProductDependencies = (
+				9DCEF2D6267F13A500DB4C32 /* SharedObjects */,
+			);
 			productName = ToDo;
 			productReference = 9D1F7A2E265CF907000BF141 /* ToDo.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +260,9 @@
 			dependencies = (
 			);
 			name = "ToDo WidgetExtension";
+			packageProductDependencies = (
+				9DCEF2D4267F139600DB4C32 /* SharedObjects */,
+			);
 			productName = "ToDo WidgetExtension";
 			productReference = 9DCEF2B8267F028B00DB4C32 /* ToDo WidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -638,6 +650,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9DCEF2D4267F139600DB4C32 /* SharedObjects */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedObjects;
+		};
+		9DCEF2D6267F13A500DB4C32 /* SharedObjects */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedObjects;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9DC9C0EC265E5CBE003B7377 /* ToDo.xcdatamodeld */ = {
