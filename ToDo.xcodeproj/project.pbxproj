@@ -30,6 +30,8 @@
 		9DCEF2BF267F028B00DB4C32 /* ToDo_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEF2BE267F028B00DB4C32 /* ToDo_Widget.swift */; };
 		9DCEF2C1267F028D00DB4C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DCEF2C0267F028D00DB4C32 /* Assets.xcassets */; };
 		9DCEF2C5267F028D00DB4C32 /* ToDo WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DCEF2B8267F028B00DB4C32 /* ToDo WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9DCEF2CF267F0A4400DB4C32 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEF2CE267F0A4400DB4C32 /* WidgetView.swift */; };
+		9DCEF2D0267F0A4400DB4C32 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEF2CE267F0A4400DB4C32 /* WidgetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,7 @@
 		9DCEF2BE267F028B00DB4C32 /* ToDo_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_Widget.swift; sourceTree = "<group>"; };
 		9DCEF2C0267F028D00DB4C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DCEF2C2267F028D00DB4C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DCEF2CE267F0A4400DB4C32 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		F9C2D175E4EE16F16C20AE48 /* Pods-ToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo.debug.xcconfig"; path = "Target Support Files/Pods-ToDo/Pods-ToDo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +195,7 @@
 				9DCEF2BE267F028B00DB4C32 /* ToDo_Widget.swift */,
 				9DCEF2C0267F028D00DB4C32 /* Assets.xcassets */,
 				9DCEF2C2267F028D00DB4C32 /* Info.plist */,
+				9DCEF2CE267F0A4400DB4C32 /* WidgetView.swift */,
 			);
 			path = "ToDo Widget";
 			sourceTree = "<group>";
@@ -360,6 +364,7 @@
 				9DC9C0EE265E5CBE003B7377 /* ToDo.xcdatamodeld in Sources */,
 				9D725EA82660DEA500864133 /* LoginView.swift in Sources */,
 				9D1F7A34265CF907000BF141 /* ContentView.swift in Sources */,
+				9DCEF2CF267F0A4400DB4C32 /* WidgetView.swift in Sources */,
 				9D5F6C112662558000437055 /* FirebaseView.swift in Sources */,
 				9D98D289265D90AD00781B2E /* ListInfo.swift in Sources */,
 				9DC9C0F2265E5CF8003B7377 /* ToDo+CoreDataProperties.swift in Sources */,
@@ -372,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DCEF2D0267F0A4400DB4C32 /* WidgetView.swift in Sources */,
 				9DCEF2BF267F028B00DB4C32 /* ToDo_Widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
